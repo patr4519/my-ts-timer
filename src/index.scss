@@ -16,12 +16,16 @@ body {
   transform: translate(-50%, -50%);
 }
 
-.timer {
-  width: 200px;
-  font-size: 20px;
-  color: #bbb;
+.timer-wrapper {
+  width: 240px;
+  font-size: 25px;
+  color: #d0d0d0;
   text-shadow: 2px 2px black;
 
+  .title {
+    text-align: center;
+    font-size: 30px;
+  }
 
   .time {
     text-align: center;

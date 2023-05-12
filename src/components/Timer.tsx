@@ -79,21 +79,24 @@ const Timer: React.FC = () => {
   };
 
   return (
-    <div className="timer">
-      <h1 className="time">{`${formatTime(hours)}:${formatTime(minutes)}:${formatTime(
-        seconds
-      )}`}</h1>
-      <div className="button-container">
-        <button className="start-button" onClick={start_pause}>
-          {isRunning ? "Pause" : "Start"}
-        </button>
-        <button className="reset-button" onClick={reset}>
-          Reset
+    <div className="timer-wrapper">
+      <h1 className="title">Working timer</h1>
+      <div className="timer">
+        <h2 className="time">{`${formatTime(hours)}:${formatTime(
+          minutes
+        )}:${formatTime(seconds)}`}</h2>
+        <div className="button-container">
+          <button className="start-button" onClick={start_pause}>
+            {isRunning ? "Pause" : "Start"}
+          </button>
+          <button className="reset-button" onClick={reset}>
+            Reset
+          </button>
+        </div>
+        <button className="save-button" onClick={save} disabled={saving}>
+          {saving ? "Saving..." : "Save"}
         </button>
       </div>
-      <button className="save-button" onClick={save} disabled={saving}>
-        {saving ? "Saving..." : "Save"}
-      </button>
     </div>
   );
 };
