@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { TypeUser } from "../types/data";
+import Skeleton from "./Skeleton";
 
 const Timer: React.FC = () => {
   const [seconds, setSeconds] = useState(0);
@@ -8,6 +9,7 @@ const Timer: React.FC = () => {
   const [hours, setHours] = useState(0);
   const [isRunning, setIsRunning] = useState(false);
   const [saving, setSaving] = useState(false);
+  const [initLoading, setInitLoading] = useState(true);
 
   useEffect(() => {
     const fetchTime = async () => {
