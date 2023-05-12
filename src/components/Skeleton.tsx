@@ -1,4 +1,3 @@
-import React from "react"
 import ContentLoader from "react-content-loader"
 
 const Skeleton = (props: any) => (
@@ -7,7 +6,7 @@ const Skeleton = (props: any) => (
     width={240}
     height={187}
     viewBox="0 0 240 187"
-    backgroundColor="#eef5f9"
+    backgroundColor="#409eb3e3"
     foregroundColor="#eef0e8"
     {...props}
   >

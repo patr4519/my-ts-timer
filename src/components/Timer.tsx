@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import { TypeUser } from "../types/data";
 import Skeleton from "./Skeleton";
+import axios from "axios";
 
 const Timer: React.FC = () => {
   const [seconds, setSeconds] = useState(0);
@@ -19,6 +19,7 @@ const Timer: React.FC = () => {
       setSeconds(data.seconds);
       setMinutes(data.minutes);
       setHours(data.hours);
+      setInitLoading(false);
     };
 
     fetchTime();
@@ -81,25 +82,31 @@ const Timer: React.FC = () => {
   };
 
   return (
-    <div className="timer-wrapper">
-      <h1 className="title">Working timer</h1>
-      <div className="timer">
-        <h2 className="time">{`${formatTime(hours)}:${formatTime(
-          minutes
-        )}:${formatTime(seconds)}`}</h2>
-        <div className="button-container">
-          <button className="start-button" onClick={start_pause}>
-            {isRunning ? "Pause" : "Start"}
-          </button>
-          <button className="reset-button" onClick={reset}>
-            Reset
-          </button>
+    <>
+      {initLoading ? (
+        <Skeleton />
+      ) : (
+        <div className="timer-wrapper">
+          <h1 className="title">Working timer</h1>
+          <div className="timer">
+            <h2 className="time">{`${formatTime(hours)}:${formatTime(
+              minutes
+            )}:${formatTime(seconds)}`}</h2>
+            <div className="button-container">
+              <button className="start-button" onClick={start_pause}>
+                {isRunning ? "Pause" : "Start"}
+              </button>
+              <button className="reset-button" onClick={reset}>
+                Reset
+              </button>
+            </div>
+            <button className="save-button" onClick={save} disabled={saving}>
+              {saving ? "Saving..." : "Save"}
+            </button>
+          </div>
         </div>
-        <button className="save-button" onClick={save} disabled={saving}>
-          {saving ? "Saving..." : "Save"}
-        </button>
-      </div>
-    </div>
+      )}
+    </>
   );
 };
 
