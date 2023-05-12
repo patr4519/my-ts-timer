@@ -8,7 +8,7 @@ const Timer: React.FC = () => {
 
   useEffect(() => {
     let interval: ReturnType<typeof setInterval>;
-    
+
     if (isRunning) {
         interval = setInterval(() => {
             setSeconds((prevSeconds) => prevSeconds + 1);
@@ -32,6 +32,13 @@ const Timer: React.FC = () => {
     return value.toString().padStart(2, "0");
   };
 
+  const reset = () => {
+    setSeconds(0);
+    setMinutes(0);
+    setHours(0);
+    setIsRunning(false)
+  }
+
   return (
     <div>
       <h1>{`${formatTime(hours)}:${formatTime(minutes)}:${formatTime(
@@ -39,6 +46,7 @@ const Timer: React.FC = () => {
       )}`}</h1>
       <button onClick={() => setIsRunning(true)}>Start</button>
       <button onClick={() => setIsRunning(false)}>Pause</button>
+      <button onClick={reset}>Reset</button>
     </div>
   );
 };
