@@ -14,9 +14,9 @@ const Timer: React.FC = () => {
       const { data } = await axios.get<TypeUser>(
         "https://63fef788571200b7b7d2e115.mockapi.io/MyTimer/1"
       );
-      setSeconds(data.seconds)
-      setMinutes(data.minutes)
-      setHours(data.hours)
+      setSeconds(data.seconds);
+      setMinutes(data.minutes);
+      setHours(data.hours);
     };
 
     fetchTime();
@@ -48,6 +48,10 @@ const Timer: React.FC = () => {
     return value.toString().padStart(2, "0");
   };
 
+  const start_pause = () => {
+    setIsRunning(!isRunning);
+  };
+
   const reset = () => {
     setSeconds(0);
     setMinutes(0);
@@ -75,16 +79,20 @@ const Timer: React.FC = () => {
   };
 
   return (
-    <div>
-      <h1>{`${formatTime(hours)}:${formatTime(minutes)}:${formatTime(
+    <div className="timer">
+      <h1 className="time">{`${formatTime(hours)}:${formatTime(minutes)}:${formatTime(
         seconds
       )}`}</h1>
-      <button onClick={() => setIsRunning(true)}>Start</button>
-      <button onClick={() => setIsRunning(false)}>Pause</button>
-      <button onClick={reset}>Reset</button>
-      <br />
-      <button onClick={save} disabled={saving}>
-        {saving ? "saving..." : "save"}
+      <div className="button-container">
+        <button className="start-button" onClick={start_pause}>
+          {isRunning ? "Pause" : "Start"}
+        </button>
+        <button className="reset-button" onClick={reset}>
+          Reset
+        </button>
+      </div>
+      <button className="save-button" onClick={save} disabled={saving}>
+        {saving ? "Saving..." : "Save"}
       </button>
     </div>
   );
