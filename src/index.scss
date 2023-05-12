@@ -2,74 +2,79 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'Bebas Neue', sans-serif;
 }
 
 body {
-  background-color: antiquewhite;
+  background-color: #42636ae3;
+}
 
-  .App {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  
-    .timer {
-      width: 200px;
-  
-      .time {
-        text-align: center;
+.App {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.timer {
+  width: 200px;
+  font-size: 20px;
+  color: #bbb;
+  text-shadow: 2px 2px black;
+
+
+  .time {
+    text-align: center;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+
+    .start-button {
+      width: 49%;
+      background-color: #4caf50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 20px;
+
+      &:hover {
+        background-color: #45a049;
       }
-  
-      .button-container {
-        display: flex;
-        justify-content: space-between;
-  
-        .start-button {
-          width: 49%;
-          background-color: #4caf50;
-          color: white;
-          padding: 10px 20px;
-          border: none;
-          border-radius: 4px;
-          cursor: pointer;
-          font-size: 16px;
-    
-          &:hover {
-            background-color: #45a049;
-          }
-        }
-    
-        .reset-button {
-          width: 49%;
-          background-color: #f44336;
-          color: white;
-          padding: 10px 20px;
-          border: none;
-          border-radius: 4px;
-          cursor: pointer;
-          font-size: 16px;
-    
-          &:hover {
-            background-color: #d32f2f;
-          }
-        }
+    }
+
+    .reset-button {
+      width: 49%;
+      background-color: #f44336;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 20px;
+
+      &:hover {
+        background-color: #d32f2f;
       }
-  
-      .save-button {
-        width: 100%;
-        background-color: #2196f3;
-        color: white;
-        padding: 10px 20px;
-        margin: 3px 0;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        font-size: 16px;
-  
-        &:hover {
-          background-color: #1976d2;
-        }
-      }
+    }
+  }
+
+  .save-button {
+    width: 100%;
+    background-color: #2196f3;
+    color: white;
+    padding: 10px 20px;
+    margin: 3px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 20px;
+
+    &:hover {
+      background-color: #1976d2;
     }
   }
 }
