@@ -7,17 +7,19 @@ import settings_icon from "./assets/settings_icon.svg";
 
 function App() {
   return (
-    <div className="App">
-      <Link to='/editing'>
+    <>
+      <Link to="/editing">
         <button className="setting_button">
           <img width={30} src={settings_icon} />
         </button>
       </Link>
-      <Routes>
-        <Route path="/" element={<Timer />} />
-        <Route path="/editing" element={<EditingForm />} />
-      </Routes>
-    </div>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Timer />} />
+          <Route path="/editing" element={<EditingForm />} />
+        </Routes>
+      </div>
+    </>
   );
 }
 
