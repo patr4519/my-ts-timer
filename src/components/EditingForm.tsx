@@ -34,6 +34,7 @@ const EditingForm: React.FC = () => {
       <label htmlFor="title">{title}</label>
       <input
         onChange={(e) => setTitle(e.target.value)}
+        placeholder="Working timer"
         type="text"
         id="title"
         name="title"
@@ -43,6 +44,7 @@ const EditingForm: React.FC = () => {
         <label htmlFor="hours">H:</label>
         <input
           onChange={(e) => setHours(Number(e.target.value))}
+          value={hours}
           type="number"
           id="hours"
           name="hours"
@@ -53,6 +55,7 @@ const EditingForm: React.FC = () => {
         <label htmlFor="minutes">M:</label>
         <input
           onChange={(e) => setMinutes(Number(e.target.value))}
+          value={minutes}
           type="number"
           id="minutes"
           name="minutes"
@@ -63,6 +66,7 @@ const EditingForm: React.FC = () => {
         <label htmlFor="seconds">S:</label>
         <input
           onChange={(e) => setSeconds(Number(e.target.value))}
+          value={seconds}
           type="number"
           id="seconds"
           name="seconds"
