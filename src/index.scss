@@ -97,6 +97,11 @@ body {
   height: 187px;
   font-size: 25px;
   color: #d0d0d0;
+  text-shadow: 1px 1px black;
+
+  a {
+    text-decoration: none;
+  }
 
   label {
     display: block;
@@ -139,7 +144,7 @@ body {
     display: block;
     width: 100%;
     padding: 10px;
-    margin-top: 10px;
+    margin-top: 5px;
     background-color: #007bff;
     color: #fff;
     border: none;
@@ -148,6 +153,14 @@ body {
 
     &:hover {
       background-color: #007bffc4;
+    }
+  }
+
+  .back-button {
+    background-color: #ec4141;
+
+    &:hover {
+      background-color: rgba(244, 67, 54, 0.74);
     }
   }
 }

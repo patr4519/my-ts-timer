@@ -1,6 +1,8 @@
 import React from "react";
 import axios from "axios";
 import { TypeUser } from "../types/data";
+import { Link, Route, Routes } from "react-router-dom";
+
 
 const EditingForm: React.FC = () => {
   const [title, setTitle] = React.useState("Working timer");
@@ -78,6 +80,10 @@ const EditingForm: React.FC = () => {
       <button onClick={submit} type="submit">
         {saving ? "Saving..." : "Ok"}
       </button>
+
+      <Link to='/'>
+        <button className="back-button">Back</button>
+      </Link>
     </form>
   );
 };
