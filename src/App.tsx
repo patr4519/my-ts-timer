@@ -10,7 +10,7 @@ function App() {
     <>
       <Link to="/editing">
         <button className="setting_button">
-          <img width={30} src={settings_icon} />
+          <img width={25} src={settings_icon} />
         </button>
       </Link>
       <div className="App">

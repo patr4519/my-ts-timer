@@ -11,11 +11,17 @@ body {
 
 .setting_button {
   background-color: rgba(0, 0, 0, 0);
+  height: 25px;
   border: none;
   cursor: pointer;
   position: fixed;
   top: 10px;
   right: 10px;
+  transition: transform 0.5s;
+
+  &:hover {
+    transform: rotate(180deg);
+  }
 }
 
 .App {
