@@ -3,7 +3,6 @@ import axios from "axios";
 import { TypeUser } from "../types/data";
 import { Link, Route, Routes } from "react-router-dom";
 
-
 const EditingForm: React.FC = () => {
   const [title, setTitle] = React.useState("Working timer");
   const [seconds, setSeconds] = React.useState(0);
@@ -15,15 +14,25 @@ const EditingForm: React.FC = () => {
     e.preventDefault();
     setSaving(true);
     try {
-      await axios.put<TypeUser>(
-        "https://63fef788571200b7b7d2e115.mockapi.io/MyTimer/1",
-        {
-          title: title,
-          seconds: seconds,
-          minutes: minutes,
-          hours: hours,
-        }
-      );
+      if (
+        seconds >= 0 &&
+        seconds <= 59 &&
+        minutes >= 0 &&
+        minutes <= 59 &&
+        hours >= 0
+      ) {
+        await axios.put<TypeUser>(
+          "https://63fef788571200b7b7d2e115.mockapi.io/MyTimer/1",
+          {
+            title: title,
+            seconds: seconds,
+            minutes: minutes,
+            hours: hours,
+          }
+        );
+      } else {
+        alert("Incorrect format of time! Avaliable format: 00:00:00");
+      }
     } catch (error) {
       alert(error);
     } finally {
@@ -81,7 +90,7 @@ const EditingForm: React.FC = () => {
         {saving ? "Saving..." : "Ok"}
       </button>
 
-      <Link to='/'>
+      <Link to="/">
         <button className="back-button">Back</button>
       </Link>
     </form>
