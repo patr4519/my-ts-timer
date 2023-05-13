@@ -9,6 +9,15 @@ body {
   background-color: #42636ae3;
 }
 
+.setting_button {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  cursor: pointer;
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
 .App {
   position: fixed;
   top: 50%;
@@ -126,6 +135,7 @@ body {
   }
 
   button {
+    font-size: 18px;
     display: block;
     width: 100%;
     padding: 10px;
