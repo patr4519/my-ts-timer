@@ -2,7 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: "Bebas Neue", sans-serif;
 }
 
 body {
@@ -80,5 +80,55 @@ body {
     &:hover {
       background-color: #1976d2;
     }
+  }
+}
+
+.editing-form {
+  width: 240px;
+  height: 187px;
+  font-size: 25px;
+  color: #d0d0d0;
+
+  label {
+    display: block;
+    margin-top: 3px;
+  }
+
+  input[type="text"] {
+    width: 100%;
+    height: 35px;
+    padding: 5px;
+    margin-top: 5px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+  }
+
+  .time-container {
+    display: flex;
+    
+    input[type="number"] {
+      width: 60px;
+      height: 35px;
+      padding: 5px;
+      margin-top: 5px;
+      box-sizing: border-box;
+      border: none;
+      border-radius: 5px;
+      outline: none;
+    }
+  }
+
+  button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
   }
 }

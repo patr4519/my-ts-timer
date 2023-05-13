@@ -1,5 +1,6 @@
 export type TypeUser = {
-  id?: string;
+  id: string;
+  title: string;
   seconds: number;
   minutes: number;
   hours: number;

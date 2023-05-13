@@ -4,6 +4,7 @@ import Skeleton from "./Skeleton";
 import axios from "axios";
 
 const Timer: React.FC = () => {
+  const [title, setTitle] = useState('');
   const [seconds, setSeconds] = useState(0);
   const [minutes, setMinutes] = useState(0);
   const [hours, setHours] = useState(0);
@@ -16,6 +17,7 @@ const Timer: React.FC = () => {
       const { data } = await axios.get<TypeUser>(
         "https://63fef788571200b7b7d2e115.mockapi.io/MyTimer/1"
       );
+      setTitle(data.title)
       setSeconds(data.seconds);
       setMinutes(data.minutes);
       setHours(data.hours);
@@ -87,7 +89,7 @@ const Timer: React.FC = () => {
         <Skeleton />
       ) : (
         <div className="timer-wrapper">
-          <h1 className="title">Working timer</h1>
+          <h1 className="title">{title}</h1>
           <div className="timer">
             <h2 className="time">{`${formatTime(hours)}:${formatTime(
               minutes
