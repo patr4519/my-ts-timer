@@ -92,9 +92,11 @@ body {
   label {
     display: block;
     margin-top: 3px;
+    text-align: center;
   }
 
   input[type="text"] {
+    font-size: 20px;
     width: 100%;
     height: 35px;
     padding: 5px;
@@ -107,9 +109,12 @@ body {
 
   .time-container {
     display: flex;
-    
+    align-items: center;
+    justify-content: space-between;
+
     input[type="number"] {
-      width: 60px;
+      font-size: 20px;
+      width: 50px;
       height: 35px;
       padding: 5px;
       margin-top: 5px;

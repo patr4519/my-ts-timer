@@ -25,13 +25,13 @@ const EditingForm: React.FC = () => {
 
       <div className="time-container">
         <label htmlFor="hours">H:</label>
-        <input onChange={(e) => setHours(Number(e.target.value))} type="number" id="hours" name="hours" />
+        <input onChange={(e) => setHours(Number(e.target.value))} type="number" id="hours" name="hours" min="0" max="60"/>
 
         <label htmlFor="minutes">M:</label>
-        <input onChange={(e) => setMinutes(Number(e.target.value))} type="number" id="minutes" name="minutes" />
+        <input onChange={(e) => setMinutes(Number(e.target.value))} type="number" id="minutes" name="minutes" min="0" max="59"/>
 
         <label htmlFor="seconds">S:</label>
-        <input onChange={(e) => setSeconds(Number(e.target.value))} type="number" id="seconds" name="seconds" />
+        <input onChange={(e) => setSeconds(Number(e.target.value))} type="number" id="seconds" name="seconds" min="0" max="59"/>
       </div>
 
       <button onClick={submit} type="submit">
