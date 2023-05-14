@@ -10,7 +10,7 @@ const EditingForm: React.FC = () => {
   const [hours, setHours] = React.useState(0);
   const [saving, setSaving] = React.useState(false);
 
-  const submit = async (e: any) => {
+  const submit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
     setSaving(true);
     try {
